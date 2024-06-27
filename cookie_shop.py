@@ -16,6 +16,23 @@ def bake_cookies(filepath):
     :returns: A list of all cookie data, where each cookie is represented as a dictionary.
     """
     # write your code for this function below here.
+    cookies = []
+    with open(filepath, encoding="utf-8," "r") as f:
+        f = f.readlines()
+        for line in f[1:]:
+            value = line.split(',')
+            cookie = {}
+            id = int(value[0])
+            cookie['id'] = id
+            title = str(value[1])
+            cookie['title'] = title
+            description = str(value[2])
+            cookie['description'] = description
+            price = float(value[3])
+            cookie['price'] = price
+            cookies.append(cookie)
+    f.close()
+    return cookies
 
 
 def welcome():
@@ -27,6 +44,7 @@ def welcome():
 
     """
     # write your code for this function below this line
+    print("Welcome to the Python Cookie Shop!\nWe feed each according to their need.")
 
 
 def display_cookies(cookies):
@@ -48,6 +66,10 @@ def display_cookies(cookies):
     :param cookies: a list of all cookies in the shop, where each cookie is represented as a dictionary.
     """
     # write your code for this function below this line
+
+    cookies 
+
+    print(f"Here are the cookies we have in the shop for you:\n {cookies}")
 
 
 def get_cookie_from_dict(id, cookies):
@@ -77,6 +99,9 @@ def solicit_quantity(id, cookies):
     :returns: The quantity the user entered, as an integer.
     """
     # write your code for this function below this line
+    enter_number = input("Please enter the number of any cookie you would like to purchase: ")
+    return int(enter_number)
+
 
 
 def solicit_order(cookies):
